@@ -7,43 +7,19 @@ Renex Engine
 
 Detailed instructions for usage can be found in instructions.txt
 A full list of parameters that can be edited is in parameters.txt
+A list of everyone who helped me with this is in thanks.txt
+A changelog for all the updates to the project is in changelog.txt
+Some potential future features can be found in TODO.txt
 
 
 --------------------------
 INSTALLATION INSTRUCTIONS
 --------------------------
 
-1. Import everything here into the appropriate places in your project. Not everything here is required to use the dialogue, but it is all needed to explore the demo room.
- I personally have it organized like this:
-	Scripts
-	   Dialogue
-		All my scripts
-	Sprites
-	   Characters
-		Character sprites
-	   Heads
-		Character face sprites
-	   Decorations
-		Cage
-		UpArrow
-	   System
-		Dialogue Handler & the 32x32 transparent version
-	Objects
-	   Parents
-		Dialogue Handler Parent
-	   Tools
-		Dialogue Handler Triggered & Interactable
-	   Characters
-		character objects
-	   Decorations
-		Cage
-		UpArrow
-	Fonts
-	   My fonts
-	Rooms
-	   Dialogue demo
-	Backgrounds
-	   Stars background
+1. Import everything here into the appropriate places in your project. Not everything here is required to use the dialogue, 
+   but it is all needed to explore the demo room. Make sure you add everything to all the index.yyd and tree.yyd files, so
+   gamemaker knows where it should go in the project.
+ 
 2. Add these lines of code to existing files:
 	In Scripts/engine_lists/list_gizmos:
 		add_gizmo(DialogueHandlerTriggered)
