@@ -11,3 +11,5 @@ You can DM me on discord at Jopagu#4728 to let me know when you're working on so
 I'd appreciate keeping in touch and letting me know if you find any bugs. I can also help you use the tools,
 and you can let me know if you have any feature requests
 Good luck and enjoy using my tools!
+
+Huge thanks to Renex for creating GM8.2, renex engine, for code help, and for allowing me to distribute a fork of his engine.
