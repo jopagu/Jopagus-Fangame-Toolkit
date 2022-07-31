@@ -1,4 +1,4 @@
-# Jopagus-Fangame-Toolkit
+# Jopagu's Fangame Toolkit
 
 This project is built for renex engine, and Gamemaker 8.2
 You can download the renex engine fork to get a fresh engine with my stuff already installed.
