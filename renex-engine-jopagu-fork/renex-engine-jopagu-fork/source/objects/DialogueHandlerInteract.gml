@@ -13,10 +13,14 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+//progress dialogue
 if (global.key_pressed[key_shoot] && messageIndex >= 0) {
+    //play transitionSound
     if( sound != "no_sound" && messageIndex != totalMessages -1){
         sound_play(sound)
     }
+
+    //activate transitionTrigger
     if(trigger != noone){
         instance_create(0, 0, trigger)
         with(trigger){
@@ -31,6 +35,7 @@ if (global.key_pressed[key_shoot] && messageIndex >= 0) {
     }
 
 }
+//skip dialogue
 if (global.key_pressed[key_skip] && skippable && messageIndex >= 0){
     event_user(0)
 }
@@ -40,6 +45,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+
+//Get rid of up arrow if the player is no longer touching
 if(!place_meeting(x, y, Player) && extantArrow){
     with (myArrow){
         instance_destroy()
@@ -53,12 +60,13 @@ action_id=603
 applies_to=self
 */
 
-
+//create an up arrow
 if(!extantArrow){
     myArrow = instance_create(Player.x - 4, Player.y - 32, UpArrow)
     extantArrow = true
 }
 
+//start the dialogue
 if(global.key_pressed[key_up] && messageIndex == -1){
     messageIndex = 0
 }
@@ -83,6 +91,7 @@ if (endSound != "no_sound"){
     sound_play(endSound)
 }
 
+//activate endTrigger
 if(endTrigger != noone){
     instance_create(0, 0, endTrigger)
     with(endTrigger){
@@ -90,6 +99,7 @@ if(endTrigger != noone){
     }
 }
 
+//unfreeze time
 with(freezer){
     instance_destroy()
 }

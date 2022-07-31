@@ -34,10 +34,12 @@ action_id=603
 applies_to=self
 */
 
+//play endSound
 if(endSound != "no_sound"){
     sound_play(endSound)
 }
 
+//activate endTrigger
 if(endTrigger != noone){
     instance_create(0, 0, endTrigger)
     with(endTrigger){
@@ -45,13 +47,16 @@ if(endTrigger != noone){
     }
 }
 
+//return control of player
 frozen=false
 
+//free memory
 for(i = 0; i < totalMessages; i += 1){
     m = ds_list_find_value(messages, i)
     ds_map_destroy(m)
 }
 
+//unfreeze time
 with(freezer){
     instance_destroy()
 }
@@ -63,16 +68,20 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+//progress dialogue
 if (global.key_pressed[key_shoot] && messageIndex >= 0) {
+    //play transitionSound
     if(sound != "no_sound" && messageIndex != totalMessages -1){
         sound_play(sound)
     }
+    //activate transitionTrigger
     if(trigger != noone){
         instance_create(0, 0, trigger)
         with(trigger){
             event_user(0)
         }
     }
+
     if(messageIndex != -1){
         messageIndex += 1;
     }
@@ -80,6 +89,8 @@ if (global.key_pressed[key_shoot] && messageIndex >= 0) {
         instance_destroy()
     }
 }
+
+//skip dialogue
 if (global.key_pressed[key_skip] && skippable && messageIndex >= 0){
     instance_destroy()
 }
@@ -90,7 +101,7 @@ action_id=603
 applies_to=self
 */
 
-
+//initialize message parameters
 if( !initialized){
     initialized = true
 
@@ -98,7 +109,6 @@ if( !initialized){
         m = ds_list_find_value(messages, i)
 
         //load template values into message map
-
         if(ds_map_exists(m, "template")){
             tName = ds_map_find_value(m, "template")
             t = ds_map_find_value(global.dialogueTemplates, tName)
@@ -227,9 +237,10 @@ if( !initialized){
 
 }
 
-
+//draw current message
 if( messageIndex >= 0 && totalMessages > 0){
 
+    //remove control of player
     frozen=true
 
     //stop timer

@@ -48,6 +48,7 @@ imageBoxWidth = 139
 imageBorderGap = 18
 imageBorderWidth = 3
 
+//Set up sprite position w/in image box
 if(imagePosition == "Center"){
     imageXSpriteOffset = 2
     imageYSpriteOffset = 2
@@ -72,6 +73,7 @@ textBorderGap = imageBorderGap + imageBoxWidth + textImageGap
 sh = string_height(name)
 sw = string_width(name)
 
+//scooch box if the nameplate is on the side of the screen edge
 if(nameplatePosition != "Top" && boxYPosition == "Bottom"){
     y1 = y1 - 7 - sh
     y2 = y2 - 7 - sh
@@ -106,7 +108,7 @@ if (w > h){
 w *= xscale
 h *= yscale
 
-
+//Further set up sprite position
 if(imagePosition == "Right"){
     imageXSpriteOffset = imageSpriteWidth - w
 }else if(imagePosition == "Bottom"){

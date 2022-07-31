@@ -22,6 +22,7 @@ action_id=603
 applies_to=self
 */
 
+//Increment/decrement the counter based on if the box is moving up/down
 if(moving){
     if(vspeed > 0){
         counter += 1
@@ -30,6 +31,7 @@ if(moving){
     }
 }
 
+//Switch direction after the counter reaches a certain point.
 if (counter > 30){
     vspeed = -1
 }else if (counter < -30){
