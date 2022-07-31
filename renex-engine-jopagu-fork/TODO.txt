@@ -1,0 +1,11 @@
+
+-fix music related crash
+  --might be fixed, keep an eye out
+
+-Character templates
+-Emotions
+
+-Choices
+
+-Text scroll
+

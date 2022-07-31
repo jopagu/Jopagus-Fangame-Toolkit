@@ -1,0 +1,55 @@
+
+-----------------------
+per message parameters
+-----------------------
+//Use add_parameter() for these
+
+"template" :: string corresponding to a template in define_templates()
+
+"image" :: sprite								//Default: sprKidHead		
+"name" :: string								//Default: "The Kid"
+"message" :: string								//Default: "Lorem Ipsum"
+"imageSide" :: <"Left" | "Right">						//Default: "Left"
+
+"font" :: font									//Default: fntDialogue
+"nameFont" :: font								//Default: fntDialogueSmall
+"instructionsFont" :: font							//Default: fntDialogueSmall
+
+"borderColor" :: color								//Default: c_black
+"textColor" :: color								//Default: c_white
+"boxColor" :: color								//Default: $c94b42
+"imageBoxColor" :: color							//Default: c_navy
+
+"borderAlpha" :: 0 <= x <= 1							//Default: 1
+"textAlpha" :: 0 <= x <= 1							//Default: 1
+"boxAlpha" :: 0 <= x <= 1							//Default: .9
+"imageBoxAlpha" :: 0 <= x <= 1							//Default: 1
+"imageAlpha" :: 0 <= x <= 1							//Default: 1
+
+"transitionSound" :: <string corresponding to a sound file | "no_sound">	//Default: "sndDJump"
+
+"drawImage" :: boolean								//Default: true
+"drawNameplate" :: boolean							//Default: true
+
+"boxYPosition" :: <"Top" | "Bottom" | "Center" | "OnObject">			//Default: "Bottom"
+"nameplatePosition" :: <"Top" | "Bottom" | "OppositeBox">			//Default: "OppositeBox"
+"imagePosition" :: <"Center" | "Fill" | "Left" | "Right" | "Top" | "Bottom">	//Default: "Center"
+
+"transitionTrigger" :: <trigger object | noone>					//Default: noone
+
+------------------------
+per dialogue parameters
+------------------------
+//These are just variables you can change
+
+"instructionMode" :: <"First" | "Always" | "Never">				//Default: "First"
+
+"startSound" :: <string corresponding to a sound file | "no_sound">		//Default: "no_sound"
+"endSound" :: <string corresponding to a sound file | "no_sound">		//Default: "sndDJump"
+
+"skippable" :: boolean								//Default: true
+
+"startTrigger" :: <trigger object | noone>					//Default: noone
+"endTrigger" :: <trigger object | noone>					//Default: noone
+
+"freezeTime" :: boolean								//Default: true

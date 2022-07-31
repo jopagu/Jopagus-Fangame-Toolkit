@@ -1,0 +1,66 @@
+
+v0.4
+
+-Character Templates!
+   --define a template in the define_templates() script
+   --reuse characters with complex settings with ease!
+
+v0.3.3
+
+-"Center" box position
+-Example moving dialogue
+-skippable parameter
+-Triggers
+   --startTrigger per dialogue parameter
+   --transitionTrigger per message parameter
+   --endTrigger per dialogue parameter
+-imagePosition parameter
+-freezeTime per dialogue parameter
+
+
+v0.3.2
+
+-Sounds
+   --startSound per dialogue parameter
+   --transitionSound per message parameter
+   --endSound per dialogue parameter
+-Optional Draws
+   --drawImage parameter
+   --drawNameplate parameter
+-Fix memory leak
+   --I forgot to destroy my data structures
+-Position Parameters
+   --boxYPosition parameter
+   --nameplatePosition
+
+v0.3.1
+
+-Removed boilerplate
+   --Offsources mapwork to scripts:
+	---add_message()
+	---add_parameter()
+
+v0.3
+
+-Added dialogue customization
+   --Font
+   --Colors
+   --Alphas
+
+
+v0.2.1
+
+-Added instructionMode parameter
+
+
+v0.2
+
+-Added Dialogue Handlers
+   --Parent
+   --Triggerable
+   --Interactable
+
+
+v0.1
+
+-Added dialogue drawing script

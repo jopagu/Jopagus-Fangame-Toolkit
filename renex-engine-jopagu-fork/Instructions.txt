@@ -1,0 +1,96 @@
+
+---------------------------
+USING DIALOGUE HANDLERS
+---------------------------
+
+Dialogue handlers come in two varieties, a triggered variety and an interactable one. 
+Most code is handled in the DialogueHandlerParent object, but these inherit from that, and
+are what you should be placing down
+
+DialogueHandlerTriggered
+   This type causes dialogue to appear when a trigger is activated. To use it, 
+   just place it touching a TriggeredX object, where X is the same number as the Trigger
+   you're using.
+
+DialogueHandlerInteractable
+   This type causes dialogue to appear when interacted with. It creates an up arrow prompt 
+   above the player, and activates dialogue upon pressing the up key. To use it, place the object
+   over whatever character or item you want to interact with. I recommend scaling this to be larger
+   than the character, so the player can interact with them from a few steps away. If you want a 
+   character to be interactable from a specific location other than themself, just put this object in 
+   that location, instead of ontop of the character. If you want a nonsquare hitbox for something, create
+   a new object using a sprite that's the shape you want, and have that object use DialogueHandlerInteractable
+   as a parent.
+
+
+
+-------------------
+DEFINING DIALOGUE
+-------------------
+
+Everything here is done within the creation code for a dialogue handler!
+
+A dialogue is made of a series of messages. A single message is one dialogue box,
+whereas a dialogue is the entire series of messages in a single event or conversation.
+
+It's time to make a message. First, type in this line to tell the program you're starting a new message:
+	add_message()
+
+Now it's time to create the message. There are a lot of parameters you can edit, a full list is found 
+in parameters.txt. To edit a parameter, you need to add to the map the name of that parameter tied to 
+the value you want for that parameter. For example:
+	add_parameter("image", sprKidHead)
+This line will change the image parameter to use the sprite sprKidHead, for the message created by the last add_message()
+
+For any messages, the basic parameters you probably want to edit are these 4:
+	"image"
+	"name"
+	"message"
+	"imageSide"
+Any parameter you don't use will simply use its default value. Those first 3 especially are all you really
+need, without them your message will use nonsense filler values. Skipping imageSide can be okay, it will just default to
+the left side. 
+
+In parameters.txt, you will also see some parameters denoted as "per dialogue" instead of "per message". 
+These are values that affect the entire dialogue, and should only be set once. They are just variables, and should be changed
+like this:
+	instructionMode = "Always"
+
+
+The rest of this section is devoted to explaining some of the less intuitive parameters.
+
+Sounds. There are three parameters regarding sounds. Two of them are per dialogue, "startSound" and "endSound". These control
+a sound to play at the start/end of the dialogue, respectively. The other is per message, "transitionSound". 
+This plays everytime you press z to progress the dialogue, except when this ends the dialogue. By default, the end sound is the same
+as the transition sound, so it seems like the transition sound plays at the end, but this isn't the case.
+
+"instructionMode": This controls the display of the dialogue instructions at the bottom,
+AKA "Z to continue, S to skip". This parameter should not get added to your map! It affects an entire dialogue rather 
+than a single message. Thus, you should just edit it at the end of your code, next to your totalMessages.
+It will look something like this:
+	instructionMode = "First"
+There are 3 possibilities for this: "First", "Always", or "Never". "Always" will make it display the instructions for every
+message in the dialogue. "Never" will make it not display the instructions at all. "First" will make it display them for the
+first message, but not for the subsequent messages.
+
+"boxYPosition": This controls where on the screen vertically the box is drawn, either the top, center, or bottom. 
+The final option, OnObject, makes the box get placed at the position of the dialogue handler object. The object's y coordinate
+becomes the vertical center of the dialogue box. This can be used to create dialogue that moves up and down, which can be seen in the
+ExampleMovingDialogue object.
+
+"nameplatePosition": This controls if the nameplate is drawn on the top or bottom of the box. The third option "OppositeBox" makes it go
+on the top if boxYPosition is "Bottom" and on the bottom if boxYPosition is "Top". If boxYPosition is something else, it defaults to the top.
+
+"imagePosition": This controls the position of the sprite within the image box. The default, "Center", draws the sprite in the center of the
+box, with a small empty space between it's widest point and the border. "Fill" draws the sprite to fill the box, with no empty space. This is 
+useful when you have a square character portrait instead of a floating face. "Left", "Right", "Top", and "Bottom" will align the image to the
+specified side, with no empty space.
+
+
+-------------
+ADDING FACES
+-------------
+
+When adding a face sprite, make sure to crop the canvas tightly to the sprite so there are no gap pixels. My code needs to
+know the width/height ratio to draw it accurately. If you have a filled square sprite, I recommend using imagePosition "Fill".
+
