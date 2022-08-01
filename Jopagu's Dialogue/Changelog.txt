@@ -1,4 +1,13 @@
 
+
+v0.5
+
+-Flags!
+   --Several scripts for using flags
+   --Flag Setter object to change flags on touch
+   --Dialogue can require flags to be true or false
+-Repeatable triggers
+
 v0.4
 
 -Character Templates!

@@ -5,7 +5,7 @@ USING DIALOGUE HANDLERS
 
 Dialogue handlers come in two varieties, a triggered variety and an interactable one. 
 Most code is handled in the DialogueHandlerParent object, but these inherit from that, and
-are what you should be placing down
+are what you should be placing down.
 
 DialogueHandlerTriggered
    This type causes dialogue to appear when a trigger is activated. To use it, 
@@ -51,6 +51,9 @@ Any parameter you don't use will simply use its default value. Those first 3 esp
 need, without them your message will use nonsense filler values. Skipping imageSide can be okay, it will just default to
 the left side. 
 
+When you've finished defining parameters for your message, you can go on to the second message by calling
+add_message() again.
+
 In parameters.txt, you will also see some parameters denoted as "per dialogue" instead of "per message". 
 These are values that affect the entire dialogue, and should only be set once. They are just variables, and should be changed
 like this:
@@ -93,4 +96,35 @@ ADDING FACES
 
 When adding a face sprite, make sure to crop the canvas tightly to the sprite so there are no gap pixels. My code needs to
 know the width/height ratio to draw it accurately. If you have a filled square sprite, I recommend using imagePosition "Fill".
+
+--------------------
+CHARACTER TEMPLATES
+--------------------
+
+By using the "template" parameter, you can easily make recurring characters without having to change every parameter every time.
+To create a template, go to the define_templates() script. There is an example for Madeling here already. 
+
+Making a new template is very similar to making a message. First, create the template with the name you want:
+	add_template("name")
+
+Then, add parameters to the template using the name you gave it. For example:
+	add_template_parameter("name", "image", sprKidHead)
+
+You can write down all the parameters once, and use them in any message without rewriting them. To make a message use the template
+you just defined, you just use the template parameter for the message, like so:
+	add_parameter("template", "name")
+
+------
+FLAGS
+------
+
+Flags are a system of global trackers that enable dialogue control flow!
+Using the scripts add_required_flag(flag), and add_required_false_flag(flag) in your dialogue's creation code,
+you can make a dialogue that will only activate if certain conditions are met, and certain conditions are not met!
+
+You can change flags to be true or false when a player touches a location using the Flag Setter object. Otherwise,
+you can change them in code using the scripts set_flag(flag) and unset_flag(flag).
+
+
+
 
