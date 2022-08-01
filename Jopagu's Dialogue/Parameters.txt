@@ -58,3 +58,6 @@ per dialogue parameters
 "flagUnset" :: string								//Default: ""
 "saveFlagSet" :: boolean							//Default: false
 "saveFlagUnset" :: boolean							//Default: false
+
+"movePlayerX" :: integer							//Default: 0
+"movePlayerY" :: integer							//Default: 0

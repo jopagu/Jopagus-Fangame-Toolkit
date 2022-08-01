@@ -1,13 +1,15 @@
 
 v0.5.2
 
--Flags can now be saved
-
+-flags can now be saved
+-move player with dialogue
+   --movePlayerX/Y parameters
 
 v0.5.1
 
 -dialogue set flags
    --A bit janky rn cause flags don't get reset on respawn 
+
 
 v0.5
 

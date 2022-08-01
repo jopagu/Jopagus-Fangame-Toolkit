@@ -126,6 +126,11 @@ with(freezer){
 //set flags
 set_dialogue_flag(flagSet, saveFlagSet)
 unset_dialogue_flag(flagUnset, saveFlagUnset)
+
+//move player
+with(Player){
+    move_player(x + movePlayerX, y + movePlayerY, true)
+}
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

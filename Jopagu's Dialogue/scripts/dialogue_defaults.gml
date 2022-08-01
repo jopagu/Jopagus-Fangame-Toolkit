@@ -49,3 +49,6 @@ global.defaultDialogueTransitionTrigger = noone
 global.defaultDialogueEndTrigger = noone
 
 global.defaultDialogueFreezeTime = true
+
+global.defaultDialogueMovePlayerX = 0
+global.defaultDialogueMovePlayerY = 0
