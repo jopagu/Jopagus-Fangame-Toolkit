@@ -34,6 +34,8 @@ requiredFalseFlags = ds_list_create()
 
 flagSet = ""
 flagUnset = ""
+saveFlagSet = false
+saveFlagUnset = false
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -115,8 +117,8 @@ with(freezer){
 
 
 //set flags
-set_dialogue_flag(flagSet)
-unset_dialogue_flag(flagUnset)
+set_dialogue_flag(flagSet, saveFlagSet)
+unset_dialogue_flag(flagUnset, saveFlagUnset)
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

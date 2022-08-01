@@ -25,3 +25,10 @@ INSTALLATION INSTRUCTIONS
 		add_gizmo(DialogueHandlerTriggered)
 	In Scripts/events/game_start:
 		dialogue_defaults()
+	In Scripts/saving/savedata_load at line 33:
+		ds_map_read(global.savedDialogueFlags , savedata("dialogueFlags"))
+    		ds_map_clear(global.dialogueFlags)
+    		merge_maps(global.dialogueFlags, global.savedDialogueFlags)
+	In Scripts/saving/savedata_save at line 64:
+		sm = ds_map_write(global.savedDialogueFlags)
+    		savedata("dialogueFlags", sm)

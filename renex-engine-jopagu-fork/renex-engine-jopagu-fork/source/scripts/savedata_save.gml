@@ -61,6 +61,9 @@ if (difficulty!=3 || argument0) with (Player) if (!dead) {
     savedata("vvvvvv",vvvvvv)
     savedata("beamstate",beamstate)
 
+    sm = ds_map_write(global.savedDialogueFlags)
+    savedata("dialogueFlags", sm)
+
     save_persistent_objects()
 
     global.gen_thumb=global.savefile_thumbnails

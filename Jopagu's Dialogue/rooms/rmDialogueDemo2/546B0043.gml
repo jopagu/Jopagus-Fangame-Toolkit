@@ -1,4 +1,3 @@
 //gm82 fields begin
-flagSet="Foo2"
-saveFlagSet=true
+text="Not Saved"
 //gm82 fields end

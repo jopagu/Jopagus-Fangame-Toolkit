@@ -1,4 +1,4 @@
 //gm82 fields begin
-flagSet="Foo2"
-saveFlagSet=true
+flagUnset="Foo2"
+saveFlagUnset=true
 //gm82 fields end

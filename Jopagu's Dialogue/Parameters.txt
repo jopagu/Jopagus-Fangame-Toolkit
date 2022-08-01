@@ -55,4 +55,6 @@ per dialogue parameters
 "freezeTime" :: boolean								//Default: true
 
 "flagSet" :: string								//Default: ""
-"flagUnset" ::string								//Default: ""
+"flagUnset" :: string								//Default: ""
+"saveFlagSet" :: boolean							//Default: false
+"saveFlagUnset" :: boolean							//Default: false

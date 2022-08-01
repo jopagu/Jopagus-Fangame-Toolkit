@@ -4,7 +4,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-extantArrow = false
+
+myArrow = noone
 
 event_inherited()
 #define Step_0
@@ -49,11 +50,10 @@ applies_to=self
 */
 
 //Get rid of up arrow if the player is no longer touching
-if(!place_meeting(x, y, Player) && extantArrow){
+if(!okay || !place_meeting(x, y, Player)){
     with (myArrow){
         instance_destroy()
     }
-    extantArrow = false
 }
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
@@ -79,18 +79,9 @@ for (i = 0; i < ds_list_size(requiredFalseFlags); i +=1 ){
     }
 }
 
-
-if(!okay && extantArrow){
-    with(myArrow){
-        instance_destroy()
-    }
-}
-
-
 //create an up arrow
-if(!extantArrow && okay){
+if(okay && !instance_exists(UpArrow)){
     myArrow = instance_create(Player.x - 4, Player.y - 32, UpArrow)
-    extantArrow = true
 }
 
 //start the dialogue
@@ -126,14 +117,15 @@ if(endTrigger != noone){
     }
 }
 
+
 //unfreeze time
 with(freezer){
     instance_destroy()
 }
 
 //set flags
-set_dialogue_flag(flagSet)
-unset_dialogue_flag(flagUnset)
+set_dialogue_flag(flagSet, saveFlagSet)
+unset_dialogue_flag(flagUnset, saveFlagUnset)
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

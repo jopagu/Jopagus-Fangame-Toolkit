@@ -1,4 +1,9 @@
 
+v0.5.2
+
+-Flags can now be saved
+
+
 v0.5.1
 
 -dialogue set flags
