@@ -15,7 +15,7 @@ instructionMode = global.defaultDialogueInstructionMode
 startSound = global.defaultDialogueStartSound
 endSound = global.defaultDialogueEndSound
 
-skippable = true
+skippable = global.defaultDialogueSkippable
 
 startTrigger = global.defaultDialogueStartTrigger
 endTrigger = global.defaultDialogueEndTrigger
@@ -27,12 +27,66 @@ freezeTime = global.defaultDialogueFreezeTime
 freezer = noone
 
 initialized = false
+
+requiredFlags = ds_list_create()
+requiredFalseFlags = ds_list_create()
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
+
+event_user(0)
+
+//free memory
+for(i = 0; i < totalMessages; i += 1){
+    m = ds_list_find_value(messages, i)
+    ds_map_destroy(m)
+}
+
+ds_list_destroy(messages)
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//progress dialogue
+if (global.key_pressed[key_shoot] && messageIndex >= 0 && messageIndex <= totalMessages) {
+    //play transitionSound
+    if(sound != "no_sound" && messageIndex != totalMessages -1){
+        sound_play(sound)
+    }
+    //activate transitionTrigger
+    if(trigger != noone){
+        instance_create(0, 0, trigger)
+        with(trigger){
+            event_user(0)
+        }
+    }
+
+    if(messageIndex != -1){
+        messageIndex += 1;
+    }
+    if (messageIndex == totalMessages){
+        event_user(0)
+    }
+}
+
+//skip dialogue
+if (global.key_pressed[key_skip] && skippable && messageIndex >= 0){
+    event_user(0)
+}
+#define Other_10
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+
+initialized = false
+messageIndex = -1
 
 //play endSound
 if(endSound != "no_sound"){
@@ -50,48 +104,8 @@ if(endTrigger != noone){
 //return control of player
 frozen=false
 
-//free memory
-for(i = 0; i < totalMessages; i += 1){
-    m = ds_list_find_value(messages, i)
-    ds_map_destroy(m)
-}
-
 //unfreeze time
 with(freezer){
-    instance_destroy()
-}
-
-ds_list_destroy(messages)
-#define Step_0
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-//progress dialogue
-if (global.key_pressed[key_shoot] && messageIndex >= 0) {
-    //play transitionSound
-    if(sound != "no_sound" && messageIndex != totalMessages -1){
-        sound_play(sound)
-    }
-    //activate transitionTrigger
-    if(trigger != noone){
-        instance_create(0, 0, trigger)
-        with(trigger){
-            event_user(0)
-        }
-    }
-
-    if(messageIndex != -1){
-        messageIndex += 1;
-    }
-    if (messageIndex == totalMessages){
-        instance_destroy()
-    }
-}
-
-//skip dialogue
-if (global.key_pressed[key_skip] && skippable && messageIndex >= 0){
     instance_destroy()
 }
 #define Draw_0
@@ -238,7 +252,7 @@ if( !initialized){
 }
 
 //draw current message
-if( messageIndex >= 0 && totalMessages > 0){
+if( messageIndex >= 0 && totalMessages > 0 && messageIndex < totalMessages){
 
     //remove control of player
     frozen=true

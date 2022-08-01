@@ -13,6 +13,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+
+
 //progress dialogue
 if (global.key_pressed[key_shoot] && messageIndex >= 0) {
     //play transitionSound
@@ -60,14 +62,33 @@ action_id=603
 applies_to=self
 */
 
+
+okay = true
+
+//check flags
+for (i = 0; i < ds_list_size(requiredFlags); i +=1 ){
+    if(!check_dialogue_flag(ds_list_find_value(requiredFlags, i))){
+        okay = false
+    }
+}
+
+//check false flags
+for (i = 0; i < ds_list_size(requiredFalseFlags); i +=1 ){
+    if(check_dialogue_flag(ds_list_find_value(requiredFalseFlags, i))){
+        okay = false
+    }
+}
+
+
+
 //create an up arrow
-if(!extantArrow){
+if(!extantArrow && okay){
     myArrow = instance_create(Player.x - 4, Player.y - 32, UpArrow)
     extantArrow = true
 }
 
 //start the dialogue
-if(global.key_pressed[key_up] && messageIndex == -1){
+if(global.key_pressed[key_up] && messageIndex == -1 && okay){
     messageIndex = 0
 }
 #define Other_10

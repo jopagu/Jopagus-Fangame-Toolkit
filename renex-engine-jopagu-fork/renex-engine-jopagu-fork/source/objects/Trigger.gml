@@ -5,6 +5,17 @@ action_id=603
 applies_to=self
 */
 repeatable = false
+
+active = false
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if(!place_meeting(x, y, Player)){
+    active = false
+}
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -27,7 +38,9 @@ applies_to=self
 */
 var l,t,r,b,group;
 
-if (instance_place(x,y,TriggerLock)) exit
+if (active || instance_place(x,y,TriggerLock)) exit
+
+active = true
 
 group=instance_place(x,y,TriggerGroup)
 
@@ -58,11 +71,7 @@ with (mytrig)
                 event_user(0)
 
 //don't destroy button triggers!
-if (!object_is_child_of(Button))
+if (!object_is_child_of(Button) && !repeatable)
     with (object_index) if (group==instance_place(x,y,TriggerGroup))
         if (x>=l && x<r && y>=t && y<b)
             if (!instance_place(x,y,TriggerLock)) instance_destroy()
-
-if(!repeatable){
-    instance_destroy()
-}

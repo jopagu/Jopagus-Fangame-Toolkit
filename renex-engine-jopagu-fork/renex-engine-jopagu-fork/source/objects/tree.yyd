@@ -364,6 +364,7 @@
 	|DialogueHandlerTriggered
 	|DialogueHandlerInteract
 	|ExampleMovingDialogue
+	|Flag Setter
 +Example (safe to delete)
 	|ExampleSavingTrap
 	|ExampleRotatingTrap

@@ -204,3 +204,8 @@
 	|define_templates
 	|draw_text_outline_alpha
 	|draw_text_outline_trans
+	|set_dialogue_flag
+	|unset_dialogue_flag
+	|check_dialogue_flag
+	|add_required_flag
+	|add_required_false_flag
