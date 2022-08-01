@@ -125,7 +125,7 @@ unset_dialogue_flag(flagUnset, saveFlagUnset)
 
 //move player
 with(Player){
-    move_player(x + movePlayerX, y + movePlayerY, true)
+    move_player(x + other.movePlayerX, y + other.movePlayerY, true)
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION
