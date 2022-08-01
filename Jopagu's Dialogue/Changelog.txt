@@ -1,4 +1,8 @@
 
+v0.5.1
+
+-dialogue set flags
+   --A bit janky rn cause flags don't get reset on respawn 
 
 v0.5
 

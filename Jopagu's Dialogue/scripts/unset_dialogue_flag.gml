@@ -4,6 +4,10 @@
 m = global.dialogueFlags
 flag = argument0
 
+if(flag == ""){
+    exit
+}
+
 if(ds_map_exists(m, flag)){
     ds_map_replace(m, flag, false)
 }else{

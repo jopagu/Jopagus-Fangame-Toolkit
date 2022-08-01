@@ -27,9 +27,13 @@ freezeTime = global.defaultDialogueFreezeTime
 freezer = noone
 
 initialized = false
+okay = true
 
 requiredFlags = ds_list_create()
 requiredFalseFlags = ds_list_create()
+
+flagSet = ""
+flagUnset = ""
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -108,6 +112,11 @@ frozen=false
 with(freezer){
     instance_destroy()
 }
+
+
+//set flags
+set_dialogue_flag(flagSet)
+unset_dialogue_flag(flagUnset)
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

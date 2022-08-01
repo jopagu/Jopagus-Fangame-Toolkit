@@ -53,3 +53,6 @@ per dialogue parameters
 "endTrigger" :: <trigger object | noone>					//Default: noone
 
 "freezeTime" :: boolean								//Default: true
+
+"flagSet" :: string								//Default: ""
+"flagUnset" ::string								//Default: ""

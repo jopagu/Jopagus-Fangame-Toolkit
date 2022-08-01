@@ -123,7 +123,7 @@ Using the scripts add_required_flag(flag), and add_required_false_flag(flag) in 
 you can make a dialogue that will only activate if certain conditions are met, and certain conditions are not met!
 
 You can change flags to be true or false when a player touches a location using the Flag Setter object. Otherwise,
-you can change them in code using the scripts set_flag(flag) and unset_flag(flag).
+you can change them in code using the scripts set_dialogue_flag(flag) and unset_dialogue_flag(flag).
 
 
 

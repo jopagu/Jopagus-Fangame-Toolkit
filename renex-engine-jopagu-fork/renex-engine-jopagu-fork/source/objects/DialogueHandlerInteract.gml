@@ -80,6 +80,12 @@ for (i = 0; i < ds_list_size(requiredFalseFlags); i +=1 ){
 }
 
 
+if(!okay && extantArrow){
+    with(myArrow){
+        instance_destroy()
+    }
+}
+
 
 //create an up arrow
 if(!extantArrow && okay){
@@ -124,6 +130,10 @@ if(endTrigger != noone){
 with(freezer){
     instance_destroy()
 }
+
+//set flags
+set_dialogue_flag(flagSet)
+unset_dialogue_flag(flagUnset)
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
