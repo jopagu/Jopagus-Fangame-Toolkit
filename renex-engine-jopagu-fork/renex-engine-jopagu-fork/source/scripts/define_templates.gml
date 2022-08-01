@@ -1,3 +1,4 @@
+//add your templates here
 
 add_template("Madeline")
 add_template_parameter("Madeline", "image", sprMadelineHead)

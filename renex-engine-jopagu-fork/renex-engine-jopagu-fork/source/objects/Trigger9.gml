@@ -6,3 +6,4 @@ applies_to=self
 */
 mytrig=Triggered9
 mylock=LockedTrigger9
+event_inherited()

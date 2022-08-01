@@ -1,3 +1,10 @@
+#define Create_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+repeatable = false
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -5,6 +12,13 @@ action_id=603
 applies_to=self
 */
 event_user(0)
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//field repeatable : bool
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -41,10 +55,14 @@ with (mytrig)
     if (group==instance_place(x,y,TriggerGroup))
         if (x>=l && x<r && y>=t && y<b)
             if (!instance_place(x,y,TriggerLock))
-                instance_destroy()
+                event_user(0)
 
 //don't destroy button triggers!
 if (!object_is_child_of(Button))
     with (object_index) if (group==instance_place(x,y,TriggerGroup))
         if (x>=l && x<r && y>=t && y<b)
             if (!instance_place(x,y,TriggerLock)) instance_destroy()
+
+if(!repeatable){
+    instance_destroy()
+}

@@ -1,3 +1,5 @@
+//draw_text_outline_alpha(dx, dy, msg, col, alpha)
+
 var dx,dy,msg,col, alpha;
 
 dx=argument0

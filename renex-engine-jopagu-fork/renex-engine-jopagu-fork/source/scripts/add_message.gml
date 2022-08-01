@@ -1,3 +1,4 @@
+//add_message()
 
 self.totalMessages += 1
 
