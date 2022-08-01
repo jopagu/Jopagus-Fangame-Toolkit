@@ -24,6 +24,9 @@ savedata("hash","new file")
 global.player_skin=global.player_default_skin
 global.player_weapon=global.player_default_weapon
 
+global.dialogueFlags = ds_map_create()
+global.savedDialogueFlags = ds_map_create()
+
 savedata("skin",global.player_skin)
 savedata("weapon",global.player_weapon)
 

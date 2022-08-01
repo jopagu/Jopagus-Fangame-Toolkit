@@ -1,9 +1,6 @@
 global.dialogueTemplates = ds_map_create()
 define_templates()
 
-global.dialogueFlags = ds_map_create()
-global.savedDialogueFlags = ds_map_create()
-
 global.defaultDialogueImage = sprKidHead
 global.defaultDialogueName = "The Kid"
 global.defaultDialogueMessage = "Lorem Ipsum"

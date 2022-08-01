@@ -32,3 +32,6 @@ INSTALLATION INSTRUCTIONS
 	In Scripts/saving/savedata_save at line 64:
 		sm = ds_map_write(global.savedDialogueFlags)
     		savedata("dialogueFlags", sm)
+	In Scripts/saving/savedata_default at line 26:
+		global.dialogueFlags = ds_map_create()
+		global.savedDialogueFlags = ds_map_create()
