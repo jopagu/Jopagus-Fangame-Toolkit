@@ -61,3 +61,8 @@ per dialogue parameters
 
 "movePlayerX" :: integer							//Default: 0
 "movePlayerY" :: integer							//Default: 0
+
+"startMusic" :: <string corresponding to a music file | "">			//Default: ""
+"endMusic" :: <string corresponding to a music file | "">			//Default: ""
+"loopStartMusic" :: boolean							//Default: true
+"loopEndMusic" :: boolean							//Default: true

@@ -49,3 +49,8 @@ global.defaultDialogueFreezeTime = true
 
 global.defaultDialogueMovePlayerX = 0
 global.defaultDialogueMovePlayerY = 0
+
+global.defaultDialogueStartMusic = ""
+global.defaultDialogueEndMusic = ""
+global.defaultDialogueLoopStartMusic = true
+global.defaultDialogueLoopEndMusic = true

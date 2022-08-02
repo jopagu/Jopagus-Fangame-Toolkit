@@ -127,6 +127,12 @@ with(freezer){
 set_dialogue_flag(flagSet, saveFlagSet)
 unset_dialogue_flag(flagUnset, saveFlagUnset)
 
+//play end music
+if(endMusic != ""){
+    play_bg_music(endMusic, loopEndMusic)
+}
+
+
 //move player
 with(Player){
     move_player(x + other.movePlayerX, y + other.movePlayerY, true)

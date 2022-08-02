@@ -39,6 +39,11 @@ saveFlagUnset = false
 
 movePlayerX = global.defaultDialogueMovePlayerX
 movePlayerY = global.defaultDialogueMovePlayerY
+
+startMusic = global.defaultDialogueStartMusic
+endMusic = global.defaultDialogueEndMusic
+loopStartMusic = global.defaultDialogueLoopStartMusic
+loopEndMusic = global.defaultDialogueLoopEndMusic
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -118,6 +123,10 @@ with(freezer){
     instance_destroy()
 }
 
+//play end music
+if(endMusic != ""){
+    play_bg_music(endMusic, loopEndMusic)
+}
 
 //set flags
 set_dialogue_flag(flagSet, saveFlagSet)
@@ -366,6 +375,11 @@ if( messageIndex >= 0 && totalMessages > 0 && messageIndex < totalMessages){
                 event_user(0)
             }
         }
+    }
+
+    //play start music
+    if(startMusic != ""){
+        play_bg_music(startMusic, loopStartMusic)
     }
 
     //deterimine if instrucitons are shown

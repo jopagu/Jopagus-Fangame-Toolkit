@@ -1,4 +1,9 @@
 
+
+v0.5.3
+
+-Play music either at the start or end of a dialogue
+
 v0.5.2
 
 -flags can now be saved
