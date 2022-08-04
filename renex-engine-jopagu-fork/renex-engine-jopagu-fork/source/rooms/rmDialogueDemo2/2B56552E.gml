@@ -1,3 +1,4 @@
 //gm82 fields begin
-flagUnset="Bar"
+flagSet="antiboop"
+saveFlagSet=false
 //gm82 fields end

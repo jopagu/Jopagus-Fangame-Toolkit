@@ -365,6 +365,7 @@
 	|DialogueHandlerInteract
 	|ExampleMovingDialogue
 	|FlagSetter
+	|HealthBarHandler
 +Example (safe to delete)
 	|ExampleSavingTrap
 	|ExampleRotatingTrap

@@ -1,3 +1,3 @@
 //gm82 fields begin
-flagSet="Foo"
+roomTo=rmHealthBarDemo
 //gm82 fields end

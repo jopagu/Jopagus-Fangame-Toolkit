@@ -209,3 +209,6 @@
 	|check_dialogue_flag
 	|add_required_flag
 	|add_required_false_flag
++healthBar
+	|draw_health_bar
+	|health_bar_defaults
