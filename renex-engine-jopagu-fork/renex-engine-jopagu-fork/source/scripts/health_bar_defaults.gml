@@ -1,6 +1,6 @@
 
 global.defaultHBImage = sprKidHead
-global.defaultHBName = "Kid"
+global.defaultHBName = "The Kid"
 
 global.defaultHBHealthTotal = 10
 global.defaultHBIFrames = 0
@@ -12,6 +12,7 @@ global.defaultHBNameplateColor = $c94b42
 
 global.defaultHBImageBoxAlpha = 1
 global.defaultHBNameplateAlpha = .9
+global.defaultHBImageAlpha = 1
 
 global.defaultHBFont = fntBossHealthBar
 

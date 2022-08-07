@@ -18,6 +18,7 @@ nameplateColor = global.defaultHBNameplateColor
 
 imageBoxAlpha = global.defaultHBImageBoxAlpha
 nameplateAlpha = global.defaultHBNameplateAlpha
+imageAlpha = global.defaultHBImageAlpha
 
 font = global.defaultHBFont
 
@@ -36,10 +37,27 @@ barColor = c_green
 healthTotal = 10
 healthCurrent = 10
 
-x1 = view_xview + 25
-x2 = view_xview + global.width - 25
-y1 = view_yview + 25
-y2 = view_yview + 200
+//set up position
+if(position == "Bottom"){
+    x1 = view_xview + 25
+    x2 = view_xview + global.width - 25
+    y1 = view_yview + global.height - 95
+    y2 = view_yview + global.height - 25
+}else{
+    x1 = view_xview + 25
+    x2 = view_xview + global.width - 25
+    y1 = view_yview + 25
+    y2 = view_yview + 95
+}
 
-draw_health_bar(x1, y1, x2, y2, image, name, healthTotal, healthCurrent, barColor, backBarColor,
-    imageBoxColor, nameplateColor, imageBoxAlpha, nameplateAlpha, font, side, imagePosition)
+locations[0] = x1
+locations[1] = y1
+locations[2] = x2
+locations[3] = y2
+
+colors[0] = barColor
+colors[1] = backBarColor
+colors[2] = imageBoxColor
+colors[3] = nameplateColor
+
+draw_health_bar(locations, image, name, healthTotal, healthCurrent, colors, imageBoxAlpha, nameplateAlpha, imageAlpha, font, side, imagePosition)
