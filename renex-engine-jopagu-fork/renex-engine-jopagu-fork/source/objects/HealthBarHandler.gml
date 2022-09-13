@@ -5,7 +5,7 @@ action_id=603
 applies_to=self
 */
 
-
+stack = 0
 
 image = global.defaultHBImage
 name = global.defaultHBName
@@ -41,13 +41,13 @@ healthCurrent = 10
 if(position == "Bottom"){
     x1 = view_xview + 25
     x2 = view_xview + global.width - 25
-    y1 = view_yview + global.height - 95
-    y2 = view_yview + global.height - 25
+    y1 = view_yview  + global.height - (25 * (stack + 1)) - (70 * (stack + 1))
+    y2 = view_yview + global.height - (25 * (stack + 1)) - (70 * stack)
 }else{
     x1 = view_xview + 25
     x2 = view_xview + global.width - 25
-    y1 = view_yview + 25
-    y2 = view_yview + 95
+    y1 = view_yview + (25 * (stack + 1)) + (70 * stack)
+    y2 = view_yview + (25 * (stack + 1)) + (70 * (stack + 1))
 }
 
 locations[0] = x1

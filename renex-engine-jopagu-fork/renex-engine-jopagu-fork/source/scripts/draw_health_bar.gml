@@ -92,21 +92,34 @@ if (side == "Left"){
             y1 + imageBorderWidth + imageYSpriteOffset, xscale, yscale, 0, -1, imageAlpha )
     }
 
+
+    //draw nameplate
     draw_set_color(c_black)
     draw_set_alpha(1)
-
     draw_rectangle(x1 + imageBoxWidth + 1, y1, x1 + imageBoxWidth + sw + 5, y1 + imageBorderWidth, false)
-    draw_line(x1 + imageBoxWidth + sw + 4, y1, x1 + imageBoxWidth + sw + sh + 4, y1 - imageBorderWidth + sh + 4)
-    draw_line(x1 + imageBoxWidth + sw + 5, y1, x1 + imageBoxWidth + sw + sh + 5, y1 - imageBorderWidth + sh + 4)
-    draw_line(x1 + imageBoxWidth + sw + 6, y1, x1 + imageBoxWidth + sw + sh + 6, y1 - imageBorderWidth + sh + 4)
+    draw_line(x1 + imageBoxWidth + sw + 3, y1, x1 + imageBoxWidth + sw + sh + 4, y1 - imageBorderWidth + sh + 4)
+    draw_line(x1 + imageBoxWidth + sw + 4, y1, x1 + imageBoxWidth + sw + sh + 5, y1 - imageBorderWidth + sh + 4)
+    draw_line(x1 + imageBoxWidth + sw + 5, y1, x1 + imageBoxWidth + sw + sh + 6, y1 - imageBorderWidth + sh + 4)
 
 
     draw_set_color(nameplateColor)
     draw_set_alpha(nameplateAlpha)
     draw_rectangle(x1 + imageBoxWidth + 1, y1 + imageBorderWidth + 1,
-                    x1 + imageBoxWidth + sw + 5, y1 - imageBorderWidth + sh + 4, false)
-    //draw_triangle(x1 + imageBoxWidth + sw + 6, y1 - imageBorderWidth + sh + 4,
-    //                x1 + imageBoxWidth + sw + 6, y1 + imageBorderWidth, x1 + imageBoxWidth + sw + sh + 6, y1 - imageBorderWidth + sh + 4, false)
+                    x1 + imageBoxWidth + sw + 4, y1 - imageBorderWidth + sh + 4, false)
+    draw_triangle(x1 + imageBoxWidth + sw + 5, y1 + imageBorderWidth, x1 + imageBoxWidth + sw + 5, y1 - imageBorderWidth +  sh + 5,
+                    x1 + imageBoxWidth + sw + sh + 5, y1 - imageBorderWidth + sh + 5, false)
+
+    draw_set_font(font)
+    draw_text_outline(x1 + imageBoxWidth + 3, y1 + imageBorderWidth + 1, name, c_white)
+
+    //draw healthbar
+    draw_set_color(c_black)
+    draw_set_color(1)
+    draw_rectangle(x1 + imageBoxWidth, y1 - imageBorderWidth + sh + 5, x2, y2, false)
+
+    draw_set_color(barColor)
+    draw_set_alpha(1)
+    draw_rectangle(x1 + imageBoxWidth + 1, y1 + sh + 5, x2 - 3, y2 - 3, false)
 
 
 }else{

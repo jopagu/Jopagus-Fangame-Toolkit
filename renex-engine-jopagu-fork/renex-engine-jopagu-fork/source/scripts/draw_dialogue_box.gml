@@ -72,6 +72,8 @@ textBorderGap = imageBorderGap + imageBoxWidth + textImageGap
 
 sh = string_height(name)
 sw = string_width(name)
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)
 
 //scooch box if the nameplate is on the side of the screen edge
 if(nameplatePosition != "Top" && boxYPosition == "Bottom"){
@@ -118,6 +120,8 @@ if(imagePosition == "Right"){
 draw_set_alpha(borderAlpha)
 draw_set_color(borderColor)
 draw_set_font(font)
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)
 
 if (imgSide == "Left"){
     //draw image box
@@ -151,6 +155,8 @@ if (imgSide == "Left"){
     if(drawNameplate){
 
         draw_set_font(fontName)
+        draw_set_halign(fa_left)
+        draw_set_valign(fa_top)
 
         if(nameplatePosition = "Top"){
             draw_set_color(borderColor)
@@ -221,6 +227,8 @@ if (imgSide == "Left"){
     //draw nameplate
     if(drawNameplate){
         draw_set_font(fontName)
+        draw_set_halign(fa_left)
+        draw_set_valign(fa_top)
 
         if(nameplatePosition == "Top"){
             draw_set_color(borderColor)
@@ -275,6 +283,8 @@ if(skippable){
     instructions += "."
 }
 draw_set_font(fontInstructions)
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)
 
 instSW = string_width(instructions)
 instSH = string_height(instructions)
