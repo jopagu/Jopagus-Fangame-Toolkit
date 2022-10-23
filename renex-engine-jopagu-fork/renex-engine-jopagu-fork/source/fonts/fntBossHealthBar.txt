@@ -1,5 +1,5 @@
 name=Engravers MT
-size=12
+size=14
 bold=0
 italic=0
 charset=1

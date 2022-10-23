@@ -49,6 +49,10 @@ if(imagePosition == "Center"){
 imageSpriteWidth = imageBoxWidth - (2 * imageBorderWidth) - (2 * imageXSpriteOffset) + 1
 imageSpriteHeight = imageBoxWidth - (2 * imageBorderWidth) - (2 * imageYSpriteOffset) + 1
 
+draw_set_font(font)
+draw_set_valign(fa_top)
+draw_set_halign(fa_left)
+
 sh = string_height(name)
 sw = string_width(name)
 
@@ -117,9 +121,19 @@ if (side == "Left"){
     draw_set_color(1)
     draw_rectangle(x1 + imageBoxWidth, y1 - imageBorderWidth + sh + 5, x2, y2, false)
 
+    c =  (x1 + imageBoxWidth + 1) + round((healthCurrent / healthTotal) * ((x2 - 3) - (x1 + imageBoxWidth + 1)))
+
     draw_set_color(barColor)
     draw_set_alpha(1)
-    draw_rectangle(x1 + imageBoxWidth + 1, y1 + sh + 5, x2 - 3, y2 - 3, false)
+    draw_rectangle(x1 + imageBoxWidth + 1, y1 + sh + 5, c, y2 - 3, false)
+
+    if(backBarColor == noone){
+        draw_set_alpha(0)
+    }
+    draw_set_color(backBarColor)
+    draw_rectangle(c + 1, y1 + sh + 5, x2 - 3, y2 - 3, false)
+
+    draw_set_alpha(1)
 
 
 }else{

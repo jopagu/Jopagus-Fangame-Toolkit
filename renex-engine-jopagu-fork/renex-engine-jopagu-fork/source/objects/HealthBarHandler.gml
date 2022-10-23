@@ -34,8 +34,8 @@ applies_to=self
 
 
 barColor = c_green
-healthTotal = 10
-healthCurrent = 10
+healthTotal = 100
+healthCurrent = 75
 
 //set up position
 if(position == "Bottom"){

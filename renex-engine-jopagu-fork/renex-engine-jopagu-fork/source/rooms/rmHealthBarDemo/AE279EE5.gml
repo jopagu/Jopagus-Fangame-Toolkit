@@ -1,2 +1,3 @@
 name = "aksdnfoaisfoiashfioashfoia"
-stack = 1
+
+position = "Bottom"

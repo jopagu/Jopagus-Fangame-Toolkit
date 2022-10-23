@@ -6,7 +6,7 @@ global.defaultHBHealthTotal = 10
 global.defaultHBIFrames = 0
 
 global.defaultHBBarColor = c_green
-global.defaultHBBackBarColor = noone
+global.defaultHBBackBarColor = c_red
 global.defaultHBImageBoxColor = c_navy
 global.defaultHBNameplateColor = $c94b42
 
