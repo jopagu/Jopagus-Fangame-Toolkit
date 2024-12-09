@@ -9,13 +9,6 @@ if (order_test==2) {
     exit
 }
 
-if (__gm82core_version<140) {
-    show_error(
-        "Please update your Game Maker 8.2 Core extension to 1.4 or newer.",
-        true
-    )
-    exit
-}
 
 if (!directory_exists("data")) {
     set_working_directory(directory_previous(working_directory))
@@ -45,16 +38,12 @@ message2=0 message2text=""
 minalpha=0
 minclick=0
 
-if (windows_version==5) {
-    //windows xp colors
-    mincolor1=$e55500
-    mincolor2=$ffffff
-} else {
-    //get win10 window colors
-    mincolor1=window_get_caption_color()
-    if (color_get_luminance(mincolor1)>128) mincolor2=0
-    else mincolor2=$ffffff
-}
+
+//get win10 window colors
+mincolor1=window_get_caption_color()
+if (color_get_luminance(mincolor1)>128) mincolor2=0
+else mincolor2=$ffffff
+
 
 global.viewangle=0
 global.pause=false
